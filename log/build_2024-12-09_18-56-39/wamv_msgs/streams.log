@@ -1,0 +1,193 @@
+[0.006s] Invoking command in '/home/hyo/ukf_ws/build/wamv_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hyo/dp_ws/install/dprl:/opt/ros/humble /usr/bin/cmake --build /home/hyo/ukf_ws/build/wamv_msgs -- -j24 -l24
+[0.026s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_generator_c[0m
+[0.031s] [  1%] Built target wamv_msgs__cpp
+[0.034s] [ 12%] Built target wamv_msgs__rosidl_generator_c
+[0.036s] [ 12%] Built target ament_cmake_python_symlink_wamv_msgs
+[0.039s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_cpp[0m
+[0.039s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_introspection_cpp[0m
+[0.039s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[0.040s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_c[0m
+[0.040s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_introspection_c[0m
+[0.041s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_fastrtps_c[0m
+[0.046s] [ 23%] Built target wamv_msgs__rosidl_typesupport_c
+[0.046s] [ 38%] Built target wamv_msgs__rosidl_typesupport_cpp
+[0.046s] [ 46%] Built target wamv_msgs__rosidl_typesupport_introspection_c
+[0.046s] [ 57%] Built target wamv_msgs__rosidl_typesupport_introspection_cpp
+[0.046s] [ 68%] Built target wamv_msgs__rosidl_typesupport_fastrtps_cpp
+[0.047s] [ 79%] Built target wamv_msgs__rosidl_typesupport_fastrtps_c
+[0.055s] [ 79%] Built target wamv_msgs
+[0.063s] [ 80%] Built target wamv_msgs__py
+[0.068s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_generator_py[0m
+[0.075s] [ 90%] Built target wamv_msgs__rosidl_generator_py
+[0.079s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.079s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[0.079s] [35m[1mConsolidate compiler generated dependencies of target wamv_msgs__rosidl_typesupport_c__pyext[0m
+[0.085s] [ 93%] Built target wamv_msgs__rosidl_typesupport_fastrtps_c__pyext
+[0.085s] [ 96%] Built target wamv_msgs__rosidl_typesupport_introspection_c__pyext
+[0.085s] [100%] Built target wamv_msgs__rosidl_typesupport_c__pyext
+[0.160s] running egg_info
+[0.160s] writing wamv_msgs.egg-info/PKG-INFO
+[0.160s] writing dependency_links to wamv_msgs.egg-info/dependency_links.txt
+[0.160s] writing top-level names to wamv_msgs.egg-info/top_level.txt
+[0.162s] reading manifest file 'wamv_msgs.egg-info/SOURCES.txt'
+[0.162s] writing manifest file 'wamv_msgs.egg-info/SOURCES.txt'
+[0.175s] [100%] Built target ament_cmake_python_build_wamv_msgs_egg
+[0.180s] Invoked command in '/home/hyo/ukf_ws/build/wamv_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hyo/dp_ws/install/dprl:/opt/ros/humble /usr/bin/cmake --build /home/hyo/ukf_ws/build/wamv_msgs -- -j24 -l24
+[0.319s] Invoking command in '/home/hyo/ukf_ws/build/wamv_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hyo/dp_ws/install/dprl:/opt/ros/humble /usr/bin/cmake --install /home/hyo/ukf_ws/build/wamv_msgs
+[0.331s] -- Install configuration: ""
+[0.332s] -- Execute custom install script
+[0.333s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/ament_index/resource_index/rosidl_interfaces/wamv_msgs
+[0.334s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/control_type.h
+[0.334s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__functions.h
+[0.334s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__struct.h
+[0.334s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__type_support.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__functions.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__struct.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__type_support.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__functions.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__struct.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__type_support.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__functions.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__struct.h
+[0.335s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__type_support.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__functions.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__struct.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__type_support.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/guidance_type.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/navigation_type.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/rl_type.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/rosidl_generator_c__visibility_control.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/wamv_info.h
+[0.336s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/library_path.sh
+[0.337s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/library_path.dsv
+[0.337s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__rosidl_typesupport_fastrtps_c.h
+[0.337s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__rosidl_typesupport_fastrtps_c.h
+[0.337s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__rosidl_typesupport_fastrtps_c.h
+[0.337s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__rosidl_typesupport_fastrtps_c.h
+[0.337s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__rosidl_typesupport_fastrtps_c.h
+[0.337s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/control_type.hpp
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__builder.hpp
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__struct.hpp
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__traits.hpp
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__builder.hpp
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__struct.hpp
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__traits.hpp
+[0.338s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__builder.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__struct.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__traits.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__builder.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__struct.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__traits.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__builder.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__struct.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__traits.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/guidance_type.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/navigation_type.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/rl_type.hpp
+[0.339s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/wamv_info.hpp
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__rosidl_typesupport_fastrtps_cpp.hpp
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__rosidl_typesupport_fastrtps_cpp.hpp
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__rosidl_typesupport_fastrtps_cpp.hpp
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__rosidl_typesupport_fastrtps_cpp.hpp
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__rosidl_typesupport_fastrtps_cpp.hpp
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__rosidl_typesupport_introspection_c.h
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__rosidl_typesupport_introspection_c.h
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__rosidl_typesupport_introspection_c.h
+[0.340s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__rosidl_typesupport_introspection_c.h
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__rosidl_typesupport_introspection_c.h
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/control_type__rosidl_typesupport_introspection_cpp.hpp
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/guidance_type__rosidl_typesupport_introspection_cpp.hpp
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/navigation_type__rosidl_typesupport_introspection_cpp.hpp
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/rl_type__rosidl_typesupport_introspection_cpp.hpp
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/include/wamv_msgs/wamv_msgs/msg/detail/wamv_info__rosidl_typesupport_introspection_cpp.hpp
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/pythonpath.sh
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/pythonpath.dsv
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.341s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/__init__.py
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/_wamv_msgs_s.ep.rosidl_typesupport_c.c
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/_wamv_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/_wamv_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/libwamv_msgs__rosidl_generator_py.so
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/__init__.py
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_control_type.py
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_control_type_s.c
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_guidance_type.py
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_guidance_type_s.c
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_navigation_type.py
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_navigation_type_s.c
+[0.342s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_rl_type.py
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_rl_type_s.c
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_wamv_info.py
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg/_wamv_info_s.c
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/wamv_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/wamv_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/wamv_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/wamv_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/wamv_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/wamv_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/NavigationType.idl
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/ControlType.idl
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/GuidanceType.idl
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/WAMVInfo.idl
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/RLType.idl
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/NavigationType.msg
+[0.343s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/ControlType.msg
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/GuidanceType.msg
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/WAMVInfo.msg
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/msg/RLType.msg
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/ament_index/resource_index/package_run_dependencies/wamv_msgs
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/ament_index/resource_index/parent_prefix_path/wamv_msgs
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/ament_prefix_path.sh
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/ament_prefix_path.dsv
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/path.sh
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/environment/path.dsv
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/local_setup.bash
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/local_setup.sh
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/local_setup.zsh
+[0.344s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/local_setup.dsv
+[0.344s] -- Symlinking: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/package.dsv
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/ament_index/resource_index/packages/wamv_msgs
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/rosidl_cmake-extras.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgsConfig.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgsConfig-version.cmake
+[0.348s] -- Up-to-date symlink: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/package.xml
+[0.348s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_generator_c.so
+[0.348s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_typesupport_fastrtps_c.so
+[0.348s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_typesupport_fastrtps_cpp.so
+[0.349s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_typesupport_introspection_c.so
+[0.349s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_typesupport_c.so
+[0.349s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_typesupport_introspection_cpp.so
+[0.349s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_typesupport_cpp.so
+[0.374s] Listing '/home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs'...
+[0.374s] Listing '/home/hyo/ukf_ws/install/wamv_msgs/local/lib/python3.10/dist-packages/wamv_msgs/msg'...
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/lib/libwamv_msgs__rosidl_generator_py.so
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_generator_cExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_generator_cExport-noconfig.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_generator_cppExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_introspection_cExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_cExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_cppExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/wamv_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_generator_pyExport.cmake
+[0.376s] -- Up-to-date: /home/hyo/ukf_ws/install/wamv_msgs/share/wamv_msgs/cmake/export_wamv_msgs__rosidl_generator_pyExport-noconfig.cmake
+[0.378s] Invoked command in '/home/hyo/ukf_ws/build/wamv_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hyo/dp_ws/install/dprl:/opt/ros/humble /usr/bin/cmake --install /home/hyo/ukf_ws/build/wamv_msgs

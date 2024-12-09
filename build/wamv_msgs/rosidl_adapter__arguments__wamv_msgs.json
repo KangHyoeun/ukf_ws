@@ -1,0 +1,10 @@
+{
+  "package_name": "wamv_msgs",
+  "non_idl_tuples": [
+    "/home/hyo/ukf_ws/src/wamv_msgs:msg/NavigationType.msg",
+    "/home/hyo/ukf_ws/src/wamv_msgs:msg/ControlType.msg",
+    "/home/hyo/ukf_ws/src/wamv_msgs:msg/GuidanceType.msg",
+    "/home/hyo/ukf_ws/src/wamv_msgs:msg/WAMVInfo.msg",
+    "/home/hyo/ukf_ws/src/wamv_msgs:msg/RLType.msg"
+  ]
+}

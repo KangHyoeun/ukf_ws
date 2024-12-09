@@ -1,0 +1,7 @@
+[console_scripts]
+dp_control = ukf_proj.dp_control:main
+kmj_control = ukf_proj.kmj_control:main
+navigation = ukf_proj.navigation:main
+ukf = ukf_proj.ukf:main
+wamv_info = ukf_proj.wamv_info:main
+

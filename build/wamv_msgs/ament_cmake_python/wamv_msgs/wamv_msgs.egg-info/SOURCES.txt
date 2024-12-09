@@ -1,0 +1,12 @@
+setup.py
+wamv_msgs/__init__.py
+wamv_msgs.egg-info/PKG-INFO
+wamv_msgs.egg-info/SOURCES.txt
+wamv_msgs.egg-info/dependency_links.txt
+wamv_msgs.egg-info/top_level.txt
+wamv_msgs/msg/__init__.py
+wamv_msgs/msg/_control_type.py
+wamv_msgs/msg/_guidance_type.py
+wamv_msgs/msg/_navigation_type.py
+wamv_msgs/msg/_rl_type.py
+wamv_msgs/msg/_wamv_info.py

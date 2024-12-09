@@ -1,0 +1,22 @@
+/**: # namespace and node name
+  ros__parameters:
+    kp_psi: 8.0
+    ki_psi: 4.0
+    kd_psi: 2.0
+    saturation_psi: 500
+
+    kp_back: 2.0
+    ki_back: 0.0
+    kd_back: 0.0
+
+    kp_turn: 10.0
+    ki_turn: 0.0
+    kd_turn: 0.0
+    saturation_turn: 300
+
+    desired_u: 0.5
+    thruster_pwm: 1000 # Basic PWM value for thruster (1550, 1575, 1605)
+    thruster_pwm_min: -2300 # Minimum threshold for thruster PWM
+    thruster_pwm_max: 2300 # Maximum threshold for thruster PWM
+    thruster_wn: 5.0 # Natural frequency for thruster PWM smoother
+    thruster_zeta: 1.0 # Damping ratio for thruster PWM smoother

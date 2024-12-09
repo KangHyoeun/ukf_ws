@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from wamv_msgs/msg/ControlType.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module wamv_msgs {
+  module msg {
+    struct ControlType {
+      std_msgs::msg::Header header;
+
+      double delta_x;
+
+      double delta_y;
+
+      double delta_psi;
+
+      double pwm_standard;
+
+      double thruster_pwm_port;
+
+      double thruster_pwm_stbd;
+
+      double azimuth_angle_port;
+
+      double azimuth_angle_stbd;
+    };
+  };
+};

@@ -1,0 +1,4 @@
+std_msgs/Header header
+NavigationType navigation
+float64 left_thrust
+float64 right_thrust

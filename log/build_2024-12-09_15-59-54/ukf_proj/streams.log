@@ -1,0 +1,25 @@
+[0.369s] Invoking command in '/home/hyo/ukf_ws/build/ukf_proj': PYTHONPATH=/home/hyo/ukf_ws/build/ukf_proj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hyo/ukf_ws/install/ukf_proj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/hyo/ukf_ws/build/ukf_proj/build --no-deps symlink_data
+[0.512s] running develop
+[0.513s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.513s]   warnings.warn(
+[0.589s] running egg_info
+[0.589s] creating ukf_proj.egg-info
+[0.590s] writing ukf_proj.egg-info/PKG-INFO
+[0.590s] writing dependency_links to ukf_proj.egg-info/dependency_links.txt
+[0.590s] writing entry points to ukf_proj.egg-info/entry_points.txt
+[0.590s] writing requirements to ukf_proj.egg-info/requires.txt
+[0.590s] writing top-level names to ukf_proj.egg-info/top_level.txt
+[0.590s] writing manifest file 'ukf_proj.egg-info/SOURCES.txt'
+[0.591s] reading manifest file 'ukf_proj.egg-info/SOURCES.txt'
+[0.591s] writing manifest file 'ukf_proj.egg-info/SOURCES.txt'
+[0.592s] running build_ext
+[0.592s] Creating /home/hyo/ukf_ws/install/ukf_proj/lib/python3.10/site-packages/ukf-proj.egg-link (link to .)
+[0.592s] 
+[0.592s] Installed /home/hyo/ukf_ws/build/ukf_proj
+[0.592s] running symlink_data
+[0.592s] creating /home/hyo/ukf_ws/install/ukf_proj/share/ament_index
+[0.592s] creating /home/hyo/ukf_ws/install/ukf_proj/share/ament_index/resource_index
+[0.592s] creating /home/hyo/ukf_ws/install/ukf_proj/share/ament_index/resource_index/packages
+[0.592s] symbolically linking /home/hyo/ukf_ws/build/ukf_proj/resource/ukf_proj -> /home/hyo/ukf_ws/install/ukf_proj/share/ament_index/resource_index/packages
+[0.593s] symbolically linking /home/hyo/ukf_ws/build/ukf_proj/package.xml -> /home/hyo/ukf_ws/install/ukf_proj/share/ukf_proj
+[0.606s] Invoked command in '/home/hyo/ukf_ws/build/ukf_proj' returned '0': PYTHONPATH=/home/hyo/ukf_ws/build/ukf_proj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hyo/ukf_ws/install/ukf_proj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/hyo/ukf_ws/build/ukf_proj/build --no-deps symlink_data

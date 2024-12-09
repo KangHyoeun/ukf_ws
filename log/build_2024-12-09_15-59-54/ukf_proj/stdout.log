@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating ukf_proj.egg-info
+writing ukf_proj.egg-info/PKG-INFO
+writing dependency_links to ukf_proj.egg-info/dependency_links.txt
+writing entry points to ukf_proj.egg-info/entry_points.txt
+writing requirements to ukf_proj.egg-info/requires.txt
+writing top-level names to ukf_proj.egg-info/top_level.txt
+writing manifest file 'ukf_proj.egg-info/SOURCES.txt'
+reading manifest file 'ukf_proj.egg-info/SOURCES.txt'
+writing manifest file 'ukf_proj.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/hyo/ukf_ws/install/ukf_proj/lib/python3.10/site-packages/ukf-proj.egg-link (link to .)
+
+Installed /home/hyo/ukf_ws/build/ukf_proj
+running symlink_data
+creating /home/hyo/ukf_ws/install/ukf_proj/share/ament_index
+creating /home/hyo/ukf_ws/install/ukf_proj/share/ament_index/resource_index
+creating /home/hyo/ukf_ws/install/ukf_proj/share/ament_index/resource_index/packages
+symbolically linking /home/hyo/ukf_ws/build/ukf_proj/resource/ukf_proj -> /home/hyo/ukf_ws/install/ukf_proj/share/ament_index/resource_index/packages
+symbolically linking /home/hyo/ukf_ws/build/ukf_proj/package.xml -> /home/hyo/ukf_ws/install/ukf_proj/share/ukf_proj

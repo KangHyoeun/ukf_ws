@@ -1,0 +1,16 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+writing ukf_proj.egg-info/PKG-INFO
+writing dependency_links to ukf_proj.egg-info/dependency_links.txt
+writing entry points to ukf_proj.egg-info/entry_points.txt
+writing requirements to ukf_proj.egg-info/requires.txt
+writing top-level names to ukf_proj.egg-info/top_level.txt
+reading manifest file 'ukf_proj.egg-info/SOURCES.txt'
+writing manifest file 'ukf_proj.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/hyo/ukf_ws/install/ukf_proj/lib/python3.10/site-packages/ukf-proj.egg-link (link to .)
+
+Installed /home/hyo/ukf_ws/build/ukf_proj
+running symlink_data

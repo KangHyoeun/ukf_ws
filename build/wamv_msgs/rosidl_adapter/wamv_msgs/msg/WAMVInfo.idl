@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from wamv_msgs/msg/WAMVInfo.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+#include "wamv_msgs/msg/ControlType.idl"
+#include "wamv_msgs/msg/GuidanceType.idl"
+#include "wamv_msgs/msg/NavigationType.idl"
+
+module wamv_msgs {
+  module msg {
+    struct WAMVInfo {
+      std_msgs::msg::Header header;
+
+      wamv_msgs::msg::NavigationType ukf_navigation;
+
+      wamv_msgs::msg::NavigationType navigation;
+
+      wamv_msgs::msg::GuidanceType guidance;
+
+      wamv_msgs::msg::ControlType control;
+    };
+  };
+};

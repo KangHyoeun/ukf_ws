@@ -1,0 +1,1 @@
+/home/hyo/ukf_ws/src/wamv_msgs/msg/NavigationType.msg

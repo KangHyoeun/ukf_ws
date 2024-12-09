@@ -1,0 +1,10 @@
+msg/ControlType.idl
+msg/ControlType.msg
+msg/GuidanceType.idl
+msg/GuidanceType.msg
+msg/NavigationType.idl
+msg/NavigationType.msg
+msg/RLType.idl
+msg/RLType.msg
+msg/WAMVInfo.idl
+msg/WAMVInfo.msg

@@ -1,0 +1,5 @@
+/home/hyo/ukf_ws/build/wamv_msgs/rosidl_adapter/wamv_msgs:msg/NavigationType.idl
+/home/hyo/ukf_ws/build/wamv_msgs/rosidl_adapter/wamv_msgs:msg/ControlType.idl
+/home/hyo/ukf_ws/build/wamv_msgs/rosidl_adapter/wamv_msgs:msg/GuidanceType.idl
+/home/hyo/ukf_ws/build/wamv_msgs/rosidl_adapter/wamv_msgs:msg/WAMVInfo.idl
+/home/hyo/ukf_ws/build/wamv_msgs/rosidl_adapter/wamv_msgs:msg/RLType.idl
