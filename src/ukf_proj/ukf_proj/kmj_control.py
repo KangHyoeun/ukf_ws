@@ -18,16 +18,16 @@ class Control(Node):
     def __init__(self):
         super().__init__('dp_control_node')
         
+        # 경유점 리스트 초기화
+        self.waypoints = [(10.0, 10.0), (30.0, 30.0), (1.0, 1.0)]  # 삼각형 경로
+        self.current_waypoint_index = 0  # 현재 경유점 인덱스
+        self.waypoint_tolerance = 2.0  # 경유점 도달 거리 임계값
+        self.x_waypoint, self.y_waypoint = self.waypoints[self.current_waypoint_index]
+
         # Initial subscriber data
         self.navigation_data    = None
-        self.target_position    = np.array([20.0, 20.0])
-        self.target_psi         = np.deg2rad(90.0) # deg
         self.desired_psi        = None
         self.error_psi          = None
-        self.distance           = None
-        self.x_waypoint         = 20.0
-        self.y_waypoint         = 20.0
-        self.feasibility        = True
 
         # ROS2 publishers and subscribers for thruster commands
         self.create_subscribers_and_publishers()
@@ -37,7 +37,7 @@ class Control(Node):
         self.timer = self.create_timer(self.dt, self.control_loop)
 
         # Get Parameter
-        self.kp_x = 4.0
+        self.kp_x = 10.0
         self.kd_x = 0.0
         self.kp_y = 10.0
         self.kd_y = 0.0
@@ -45,8 +45,8 @@ class Control(Node):
         self.kd_psi = 0.1
 
         # 임시 목표 위치 설정을 위한 파라미터
-        self.max_search_radius = 5.0  # 탐색 반경 (미터 단위)
-        self.search_step = 0.5  # 탐색 간격 (미터 단위)        
+        self.max_search_radius = 10.0  # 탐색 반경 (미터 단위)
+        self.search_step = 0.1  # 탐색 간격 (미터 단위)        
 
         # azimuth 각도 변화율 제한 설정
         self.max_azimuth_change_rate = np.deg2rad(5.0)  # 10도/초로 제한
@@ -63,7 +63,7 @@ class Control(Node):
         self.Control     = NonlinearPDControl()
 
     def create_subscribers_and_publishers(self):
-        self.navigation_subscriber = self.create_subscription(NavigationType, '/ukf_navigation', self.navigation_callback, 20)
+        self.navigation_subscriber = self.create_subscription(NavigationType, '/navigation', self.navigation_callback, 20)
 
         # ROS2 publishers for thruster commands
         self.guidance_publisher     = self.create_publisher(GuidanceType, '/guidance', 20)
@@ -82,17 +82,24 @@ class Control(Node):
         self.u   = self.navigation_data.u
         self.r   = self.navigation_data.r
 
-        self.position = np.array([self.x, self.y])
+        self.position = np.array([self.x, self.y]) 
 
     def control_loop(self):
 
-        if self.navigation_data is None or self.x_waypoint is None or self.y_waypoint is None:
+        if self.navigation_data is None:
             self.get_logger().info(f'check the goal and navigation data!', once = True)
             return
         
         # 목표 위치와의 거리 및 방위각 오차 계산
         self.target_position = np.array([self.x_waypoint, self.y_waypoint])
         distance             = np.linalg.norm(self.target_position - self.position)
+
+        # 경유점 도달 여부 확인
+        if distance < self.waypoint_tolerance:
+            self.get_logger().info(f"Waypoint {self.current_waypoint_index} reached!")
+            self.current_waypoint_index = (self.current_waypoint_index + 1) % len(self.waypoints)
+            self.target_position = np.array(self.waypoints[self.current_waypoint_index])
+            self.get_logger().info(f"Moving to waypoint {self.current_waypoint_index}: {self.target_position}")
 
         # 추력 할당 가능 여부 확인
         if not self.check_thrust_allocation(self.target_position):
@@ -102,7 +109,8 @@ class Control(Node):
                 self.get_logger().info('임시 목표 위치를 설정합니다.')
             else:
                 self.get_logger().info('임시 목표 위치를 찾을 수 없습니다.')
-                return  # 제어 루프 종료
+        # 추력을 계속 할당하도록 allocate_thrust 호출 추가
+        self.allocate_thrust(np.zeros(3))  # 기본값으로 delta = [0, 0, 0] 전달
 
         # 목표 위치와의 거리 및 오차 계산
         error = self.calculate_error(self.target_position, distance)
@@ -121,11 +129,8 @@ class Control(Node):
         """주어진 목표 위치와 현재 위치 간의 오차 계산"""
         error_x = target_position[0] - self.position[0]
         error_y = target_position[1] - self.position[1]
-        distance = np.linalg.norm(self.target_position - self.position)
         desired_heading = np.arctan2(error_y, error_x)
         error_heading = (desired_heading - self.psi + np.pi) % (2 * np.pi) - np.pi
-        if distance <= 5.0:
-            error_heading = (self.target_psi - self.psi + np.pi) % (2 * np.pi) - np.pi
 
         msg2             = GuidanceType()
         msg2.desired_psi = round(desired_heading, 4)
@@ -133,8 +138,8 @@ class Control(Node):
         msg2.error_y     = round(error_y, 4)
         msg2.error_psi   = round(error_heading, 4)
         msg2.distance    = round(distance, 2)
-        msg2.x_waypoint  = round(self.x_waypoint, 4)
-        msg2.y_waypoint  = round(self.y_waypoint, 4)
+        msg2.x_waypoint  = round(self.target_position[0], 4)
+        msg2.y_waypoint  = round(self.target_position[1], 4)
 
         self.guidance_publisher.publish(msg2)
 
@@ -155,6 +160,7 @@ class Control(Node):
         y축 힘 Fy를 주어진 a, b 범위 내에서 u1y와 u2y로 분배하여 반환.
         할당이 불가능한 경우 (0, 0)을 반환하고, 할당 가능 여부를 함께 반환.
         """
+        self.get_logger().info(f"Debug Fy: {Fy}, a: {a}, b: {b}")
         if abs(Fy) <= 2 * min(abs(a), abs(b)):
             # 할당 가능: |Fy|가 2 * min(|a|, |b|) 이하인 경우
             return 0.5 * Fy, 0.5 * Fy, True
@@ -181,8 +187,8 @@ class Control(Node):
         """주어진 목표 위치에서 추력 할당 가능 여부 확인"""
         h        = 2.373776
         w        = 1.027135
-        umax     = 220.0 # 220N
-        thetamax = np.deg2rad(45.0)
+        umax     = 300.0 # 220N
+        thetamax = np.deg2rad(60.0)
 
         error = self.calculate_error(target_position, np.linalg.norm(target_position - self.position))
 
@@ -193,7 +199,7 @@ class Control(Node):
         Kd = np.diag(kds)
         self.Control.update(Kp, Kd)
         delta = self.Control.main(error, self.psi, self.dt)
-        Fx, Fy, tau_psi = delta
+        Fx, Fy, tau_psi = np.clip(delta, -umax, umax)  # umax = 최대 추력 (220N 등)
 
         # u1x, u2x 계산 및 추력 할당 가능 여부 확인
         u1x, u2x = self.calculate_u1x_u2x(Fx, Fy, tau_psi, h, w)
@@ -216,13 +222,14 @@ class Control(Node):
 
     def allocate_thrust(self, delta):
         # delta[0]: x 방향 힘, delta[1]: y 방향 힘, delta[2]: z 방향 모멘트
-        Fx, Fy, tau_psi = delta
 
         h        = 2.373776
         w        = 1.027135
-        umax     = 220.0 # 220N
-        umin     = -160.0
-        thetamax = np.deg2rad(45.0)
+        umax     = 300.0 # 220N
+        umin     = -200.0
+        thetamax = np.deg2rad(60.0)
+
+        Fx, Fy, tau_psi = np.clip(delta, umin, umax)  # umax = 최대 추력 (220N 등)
 
         # Step 1: u1x, u2x 계산
         u1x, u2x = self.calculate_u1x_u2x(Fx, Fy, tau_psi, h, w)
@@ -245,8 +252,8 @@ class Control(Node):
             self.prev_pwm1, self.prev_pwm2 = pwm1, pwm2
 
             # 메시지 생성 및 퍼블리시
-            self.left_pos_publisher.publish(Float64(data=-theta2))
-            self.right_pos_publisher.publish(Float64(data=-theta1))
+            self.left_pos_publisher.publish(Float64(data=-2.0*theta2))
+            self.right_pos_publisher.publish(Float64(data=-2.0*theta1))
             self.left_thrust_publisher.publish(Float64(data=1.2*pwm1))
             self.right_thrust_publisher.publish(Float64(data=1.2*pwm2))
 
@@ -255,12 +262,21 @@ class Control(Node):
             msg.delta_x            = float(round(delta[0], 4))
             msg.delta_y            = float(round(delta[1], 4))
             msg.delta_psi          = round(delta[2], 4)
-            msg.thruster_pwm_port  = float(round(1.2*pwm1, 2))
-            msg.thruster_pwm_stbd  = float(round(1.2*pwm2, 2))
+            msg.thruster_pwm_port  = float(round(2.0*pwm1, 2))
+            msg.thruster_pwm_stbd  = float(round(2.0*pwm2, 2))
             msg.azimuth_angle_port = round(-theta2, 4)
             msg.azimuth_angle_stbd = round(-theta1, 4)
 
-            self.control_publisher.publish(msg)       
+            self.control_publisher.publish(msg)
+
+        if not feasible:
+            self.get_logger().error("Thrust allocation not feasible. Publishing zero commands.")
+            self.left_pos_publisher.publish(Float64(data=0.0))
+            self.right_pos_publisher.publish(Float64(data=0.0))
+            self.left_thrust_publisher.publish(Float64(data=-200.0))
+            self.right_thrust_publisher.publish(Float64(data=-200.0))
+            return
+
 
 def main(args=None):
     rclpy.init(args=args)

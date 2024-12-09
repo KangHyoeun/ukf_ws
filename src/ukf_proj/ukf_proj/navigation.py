@@ -31,7 +31,7 @@ class VelocityCalculator(Node):
         self.dt = 1/20
 
         # 경로 설정: 삼각형 경로의 목표 지점 리스트
-        self.path_points = [(-30.0, 70.0), (70.0, 30.0), (0.0, 0.0)]
+        self.path_points = [(10.0, 10.0), (30.0, 30.0), (1.0, 1.0)]  # 삼각형 경로
         self.current_goal_index = 0  # 현재 목표 지점 인덱스
         self.goal_tolerance = 2.0   # 목표 지점 도달 거리 임계값 (2m)
 
@@ -111,7 +111,7 @@ class VelocityCalculator(Node):
 
     def publish_navigation_msg(self):
         goal_x, goal_y = self.path_points[self.current_goal_index]
-        
+
         header = Header()
         header.stamp = self.get_clock().now().to_msg()
 

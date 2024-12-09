@@ -43,14 +43,16 @@ class UKF(Node):
         self.dim_x = 6  # 상태 벡터 크기: [x, y, psi, u, v, r]
         self.dim_z = 2  # 측정 벡터 크기: [x, y] (GPS)
         self.x = np.zeros(self.dim_x)  # 초기 상태
-        self.P = np.eye(self.dim_x) * 1.0   # 초기 공분산 행렬
-        self.Q = np.eye(self.dim_x) * 0.01     # 프로세스 노이즈 공분산
-        self.R = np.diag([0.85**2, 0.85**2])  # GPS 노이즈 분산 기반
+        max_variance = 1e4
+        self.P = np.eye(self.dim_x) * 1.0  # 초기 공분산
+        self.P = np.clip(self.P, -max_variance, max_variance)
+        self.Q = np.eye(self.dim_x) * 0.05  # 약간 증가
+        self.R = np.diag([1.0, 1.0])  # GPS 노이즈를 약간 증가
         self.Wm, self.Wc = self._calculate_weights()
 
         # subscription
         self.gps_fix_subscriber   = self.create_subscription(NavSatFix, '/wamv/sensors/gps/gps/fix',  self.gps_fix_callback,   20)
-        self.imu_data_subscriber  = self.create_subscription(Imu,       '/wamv/sensors/imu/imu/data', self.imu_data_callback,  100)
+        self.imu_data_subscriber  = self.create_subscription(Imu,       '/wamv/sensors/imu/imu/data', self.imu_data_callback,  20)
 
         # Publish
         self.fusion_nav_publisher = self.create_publisher(NavigationType, '/ukf_navigation', 20)
@@ -81,20 +83,17 @@ class UKF(Node):
         e, n, _, _ = utm.from_latlon(msg.latitude, msg.longitude)
         current_position = np.array([e - self.origin_e, n - self.origin_n])
 
-
-        # 이전 위치가 존재하는 경우 속도 계산
-        if self.prev_position is not None:
-            dt = (msg.header.stamp.sec + msg.header.stamp.nanosec * 1e-9) - self.prev_time
-            dx = current_position[0] - self.prev_position[0]
-            dy = current_position[1] - self.prev_position[1]
-            if dt > 0:
-                vx = dx / dt
-                vy = dy / dt
-                self.x[3], self.x[4] = self.transform_to_body_frame(vx, vy, self.x[2]) # [u, v]
-
         # 현재 위치와 시간 저장
         self.prev_position = current_position
         self.prev_time = msg.header.stamp.sec + msg.header.stamp.nanosec * 1e-9
+
+        if self.prev_position is None:
+            self.prev_position = current_position
+            self.x[0:2] = current_position
+            self.P = np.eye(self.dim_x) * 1.0  # 초기 공분산
+            self.get_logger().info("GPS initialized.")
+            return
+
 
         self.update(current_position)
 
@@ -110,7 +109,7 @@ class UKF(Node):
         nav_msg = NavigationType()
         nav_msg.header = Header()
         nav_msg.header.stamp = self.get_clock().now().to_msg()
-        nav_msg.header.frame_id = 'base_link'
+        nav_msg.header.frame_id = 'WAM-V'
         nav_msg.x = self.x[0]
         nav_msg.y = self.x[1]
         nav_msg.psi = self.x[2]
@@ -118,6 +117,12 @@ class UKF(Node):
         nav_msg.v = self.x[4]
         nav_msg.r = self.x[5]
         self.fusion_nav_publisher.publish(nav_msg)
+
+        # 디버깅 출력
+        self.get_logger().info(f"State: {self.x}")
+        self.get_logger().info(f"Covariance Trace: {np.trace(self.P)}")
+        self.get_logger().info(f"Process Noise Q:\n{self.Q}")
+        self.get_logger().info(f"Measurement Noise R:\n{self.R}")
 
         # 공분산의 추정 정확도 퍼블리시
         covariance_msg = Float64()
@@ -161,14 +166,37 @@ class UKF(Node):
             self.Wc[i] * np.outer(sigma_points[i] - self.x, sigma_points_meas[i] - z_pred)
             for i in range(2 * self.dim_x + 1)
         )
-        K = Pxz @ np.linalg.inv(Pz)
+        
+        # 수치 안정성을 위해 Pz에 작은 값 추가
+        Pz += np.eye(Pz.shape[0]) * 1e-6
+        self.get_logger().info(f"Pz matrix:\n{Pz}")
+
+        try:
+            # 칼만 이득 계산
+            K = Pxz @ np.linalg.inv(Pz)
+        except np.linalg.LinAlgError:
+            self.get_logger().error("Singular matrix detected in Pz. Using pseudo-inverse.")
+            K = Pxz @ np.linalg.pinv(Pz)  # 특이 행렬에 대해 유사 역행렬 사용
+
+        # 상태 업데이트
         self.x += K @ (gps_data - z_pred)
         self.P -= K @ Pz @ K.T
 
+
     def _generate_sigma_points(self):
         n = self.dim_x
+        try:
+            # P 안정화를 위해 작은 값 추가
+            self.P += np.eye(n) * 1e-6
+            sqrt_P = np.linalg.cholesky((n + 0.001) * self.P)
+        except np.linalg.LinAlgError:
+            self.get_logger().error("Matrix P is not positive definite. Attempting to fix...")
+            # 비양의 정부호 행렬 복구
+            min_eigenvalue = np.min(np.linalg.eigvals(self.P))
+            if min_eigenvalue < 0:
+                self.P += np.eye(n) * (-min_eigenvalue + 1e-6)
+            sqrt_P = np.linalg.cholesky((n + 0.001) * self.P)
         sigma_points = np.zeros((2 * n + 1, n))
-        sqrt_P = np.linalg.cholesky((n + 0.001) * self.P)
         sigma_points[0] = self.x
         for i in range(n):
             sigma_points[i + 1] = self.x + sqrt_P[i]

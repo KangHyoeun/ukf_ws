@@ -67,6 +67,6 @@ def generate_launch_description():
     # 등록된 노드 실행
     launch_description.add_action(kmj_control_node)
     launch_description.add_action(navigation_node)
-    launch_description.add_action(ukf_node)
+    # launch_description.add_action(ukf_node)
     launch_description.add_action(wamv_info_node)
     return launch_description

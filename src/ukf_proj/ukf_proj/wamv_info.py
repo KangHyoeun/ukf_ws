@@ -19,7 +19,7 @@ class WAMVInfoNode(Node):
         self.control_data        = None
 
         # subscriber
-        self.fusion_nav_subscriber   = self.create_subscription(NavigationType, '/ukf_navigation', self.fusion_nav_callback, 20)
+        # self.fusion_nav_subscriber   = self.create_subscription(NavigationType, '/ukf_navigation', self.fusion_nav_callback, 20)
         self.navigation_subscriber   = self.create_subscription(NavigationType, '/navigation',                  self.navigation_callback,   20)
         self.left_thrust_subscriber  = self.create_subscription(Float64,        '/wamv/thrusters/left/thrust',  self.left_thrust_callback,  10)
         self.right_thrust_subscriber = self.create_subscription(Float64,        '/wamv/thrusters/right/thrust', self.right_thrust_callback, 10)
@@ -61,7 +61,7 @@ class WAMVInfoNode(Node):
 
         wamv_info                 = RLType()
         wamv_info.header          = header
-        wamv_info.ukf_navigation  = self.ukf_navigation_data
+        # wamv_info.ukf_navigation  = self.ukf_navigation_data
         wamv_info.navigation      = self.navigation_data
         wamv_info.left_thrust     = self.left_thrust
         wamv_info.right_thrust    = self.right_thrust
